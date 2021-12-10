@@ -1,0 +1,5 @@
+{
+    "apis": {
+        "domains_lockup": "https://domains.yougetsignal.com/domains.php?remoteAddress="
+    }
+}
