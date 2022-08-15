@@ -1,0 +1,112 @@
+_______________________________________________________________
+         __          _______   _____
+         \ \        / /  __ \ / ____|
+          \ \  /\  / /| |__) | (___   ___  __ _ _ __ ®
+           \ \/  \/ / |  ___/ \___ \ / __|/ _` | '_ \
+            \  /\  /  | |     ____) | (__| (_| | | | |
+             \/  \/   |_|    |_____/ \___|\__,_|_| |_|
+
+         WordPress Security Scanner by the WPScan Team
+                         Version 3.8.20
+       Sponsored by Automattic - https://automattic.com/
+       @_WPScan_, @ethicalhack3r, @erwan_lr, @firefart
+_______________________________________________________________
+
+[32m[+][0m URL: https://demo.rivaxstudio.com/kayleen/ [104.21.24.84]
+[32m[+][0m Started: Sun Jan 30 01:46:36 2022
+
+Interesting Finding(s):
+
+[32m[+][0m Headers
+ | Interesting Entries:
+ |  - x-powered-by: PHP/8.1.1
+ |  - x-dns-prefetch-control: on
+ |  - x-litespeed-cache: hit
+ |  - x-turbo-charged-by: LiteSpeed
+ |  - cf-cache-status: DYNAMIC
+ |  - expect-ct: max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+ |  - report-to: {"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=mWV60U6D8t9iLm%2FHn%2FuTkPLW8g2IWIB6O37ccXIhmTRxx1FAB94u79j56c2eRkx8r2eVx9LWkTy16FFhnbvuH99KguN6hEYKiXYIpoEkMX6ORxevVQF%2BjwAHY6mciLpLKrlrLcr%2Ftw%3D%3D"}],"group":"cf-nel","max_age":604800}
+ |  - nel: {"success_fraction":0,"report_to":"cf-nel","max_age":604800}
+ |  - server: cloudflare
+ |  - cf-ray: 6d56af0d9e7bd48c-BRU
+ |  - alt-svc: h3=":443"; ma=86400, h3-29=":443"; ma=86400
+ | Found By: Headers (Passive Detection)
+ | Confidence: 100%
+
+[32m[+][0m XML-RPC seems to be enabled: https://demo.rivaxstudio.com/kayleen/xmlrpc.php
+ | Found By: Direct Access (Aggressive Detection)
+ | Confidence: 100%
+ | References:
+ |  - http://codex.wordpress.org/XML-RPC_Pingback_API
+ |  - https://www.rapid7.com/db/modules/auxiliary/scanner/http/wordpress_ghost_scanner/
+ |  - https://www.rapid7.com/db/modules/auxiliary/dos/http/wordpress_xmlrpc_dos/
+ |  - https://www.rapid7.com/db/modules/auxiliary/scanner/http/wordpress_xmlrpc_login/
+ |  - https://www.rapid7.com/db/modules/auxiliary/scanner/http/wordpress_pingback_access/
+
+[32m[+][0m WordPress readme found: https://demo.rivaxstudio.com/kayleen/readme.html
+ | Found By: Direct Access (Aggressive Detection)
+ | Confidence: 100%
+
+[32m[+][0m The external WP-Cron seems to be enabled: https://demo.rivaxstudio.com/kayleen/wp-cron.php
+ | Found By: Direct Access (Aggressive Detection)
+ | Confidence: 60%
+ | References:
+ |  - https://www.iplocation.net/defend-wordpress-from-ddos
+ |  - https://github.com/wpscanteam/wpscan/issues/1299
+
+[32m[+][0m WordPress version 5.8.3 identified (Latest, released on 2022-01-06).
+ | Found By: Query Parameter In Login Page (Aggressive Detection)
+ |  - https://demo.rivaxstudio.com/kayleen/wp-includes/css/dashicons.min.css?ver=5.8.3
+ |  - https://demo.rivaxstudio.com/kayleen/wp-includes/css/buttons.min.css?ver=5.8.3
+ |  - https://demo.rivaxstudio.com/kayleen/wp-admin/css/forms.min.css?ver=5.8.3
+ |  - https://demo.rivaxstudio.com/kayleen/wp-admin/css/l10n.min.css?ver=5.8.3
+ |  - https://demo.rivaxstudio.com/kayleen/wp-admin/css/login.min.css?ver=5.8.3
+ |  - https://demo.rivaxstudio.com/kayleen/wp-admin/js/password-strength-meter.min.js?ver=5.8.3
+ |  - https://demo.rivaxstudio.com/kayleen/wp-includes/js/wp-util.min.js?ver=5.8.3
+ |  - https://demo.rivaxstudio.com/kayleen/wp-admin/js/user-profile.min.js?ver=5.8.3
+
+[32m[+][0m WordPress theme in use: kayleen
+ | Location: https://demo.rivaxstudio.com/kayleen/wp-content/themes/kayleen/
+ | Style URL: https://demo.rivaxstudio.com/kayleen/wp-content/themes/kayleen/style.css
+ | Style Name: Kayleen
+ | Style URI: https://demo.rivaxstudio.com/kayleen/
+ | Description: Kayleen is Designed for lightweight WordPress Magazine, Blog and Newspapaer Websites....
+ | Author: RivaxStudio
+ | Author URI: https://themeforest.net/user/rivaxstudio/
+ |
+ | Found By: Urls In Homepage (Passive Detection)
+ | Confirmed By: Urls In 404 Page (Passive Detection)
+ |
+ | Version: 1.0.0 (80% confidence)
+ | Found By: Style (Passive Detection)
+ |  - https://demo.rivaxstudio.com/kayleen/wp-content/themes/kayleen/style.css, Match: 'Version: 1.0.0'
+
+
+[34m[i][0m User(s) Identified:
+
+[32m[+][0m userdemo
+ | Found By: Author Posts - Author Pattern (Passive Detection)
+ | Confirmed By:
+ |  Wp Json Api (Aggressive Detection)
+ |   - https://demo.rivaxstudio.com/kayleen/wp-json/wp/v2/users/?per_page=100&page=1
+ |  Author Sitemap (Aggressive Detection)
+ |   - https://demo.rivaxstudio.com/kayleen/wp-sitemap-users-1.xml
+ |  Author Id Brute Forcing - Author Pattern (Aggressive Detection)
+ |  Login Error Messages (Aggressive Detection)
+
+[32m[+][0m Alice
+ | Found By: Rss Generator (Passive Detection)
+ | Confirmed By: Rss Generator (Aggressive Detection)
+
+[32m[+][0m WPScan DB API OK
+ | Plan: free
+ | Requests Done (during the scan): 2
+ | Requests Remaining: 21
+
+[32m[+][0m Finished: Sun Jan 30 01:47:13 2022
+[32m[+][0m Requests Done: 68
+[32m[+][0m Cached Requests: 8
+[32m[+][0m Data Sent: 22.853 KB
+[32m[+][0m Data Received: 1.731 MB
+[32m[+][0m Memory used: 101.93 MB
+[32m[+][0m Elapsed time: 00:00:37
